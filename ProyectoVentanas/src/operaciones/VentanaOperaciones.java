@@ -222,7 +222,7 @@ public class VentanaOperaciones extends JFrame implements ActionListener, Window
     public void habilitarBotonAnadirVuelo() {
         JFormattedTextField usuarioTextField = VentanaLogin.getUsuarioTextField();
 
-        if (usuarioTextField != null && "222222222J".equals(usuarioTextField.getText())) {
+        if (usuarioTextField != null && "22.222.222-J".equals(usuarioTextField.getText())) {
             btnAnadirVuelo.setEnabled(true);
         } else {
             btnAnadirVuelo.setEnabled(false);
@@ -285,13 +285,6 @@ public class VentanaOperaciones extends JFrame implements ActionListener, Window
                         JOptionPane.showMessageDialog(VentanaOperaciones.this, mensaje.toString());
                     }
 
-//                    if (b == btnSeleccionar) {
-//                        try {
-//                            VentanaOperaciones.actualizarHoras(vd.getHoraSalida(), vd.getHoraLlegada());
-//                        } catch (Exception e1) {
-//                            e1.printStackTrace();
-//                        }
-//                    }
                 }
             }
         });
@@ -300,8 +293,7 @@ public class VentanaOperaciones extends JFrame implements ActionListener, Window
     public void establecerIdiomaIngles() {
         JFormattedTextField usuarioTextField = VentanaLogin.getUsuarioTextField();
 
-        if (usuarioTextField != null && "222222222J".equals(usuarioTextField.getText())) {
-            // Configure component texts in English
+        if (usuarioTextField != null && "22.222.222-J".equals(usuarioTextField.getText())) {
             btnAnadirVuelo.setText("Add Flight");
             ButtonAceptar.setText("Accept");
             ButtonCancelar.setText("Cancel");
@@ -326,7 +318,6 @@ public class VentanaOperaciones extends JFrame implements ActionListener, Window
     private void abrirVentanaAnadirVuelo() {
         EventQueue.invokeLater(() -> {
             try {
-                // Pasa la instancia de VentanaOperaciones a VentanaAnadirVuelo
                 VentanaAnyadirVuelo ventanaAnadirVuelo = new VentanaAnyadirVuelo();
                 ventanaAnadirVuelo.setVisible(true);
             } catch (Exception ex) {

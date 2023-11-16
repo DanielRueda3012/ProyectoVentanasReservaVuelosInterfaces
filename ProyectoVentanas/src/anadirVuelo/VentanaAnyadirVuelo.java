@@ -64,6 +64,7 @@ public class VentanaAnyadirVuelo extends JFrame {
 	 */
 	public VentanaAnyadirVuelo() {
 		initialize();
+		
 	}
 
 	/**
@@ -220,6 +221,7 @@ public class VentanaAnyadirVuelo extends JFrame {
 		labelDosPuntos2.setBounds(166, 77, 16, 14);
 		frame.getContentPane().add(labelDosPuntos2);
 		botonPulsado(okButton);
+		
 	}
 
 	private void calcularLlegada() {
@@ -264,29 +266,41 @@ public class VentanaAnyadirVuelo extends JFrame {
 	}
 
 	private static void anyadirVueloNuevo() {
-		String[] vueloNuevo = new String[5];
+	    String[] vueloNuevo = new String[5];
 
-		vueloNuevo[0] = comboBoxOrigen.getSelectedItem().toString();
-		vueloNuevo[1] = textFieldHoraSalida.getText() + ":" + textFieldMinutosSalida.getText();
-		vueloNuevo[2] = textFieldHoraLlegada.getText() + ":" + textFieldMinutosLlegada.getText();
-		vueloNuevo[3] = comboBoxClase.getSelectedItem().toString();
-		vueloNuevo[4] = textFieldPrecio.getText();
+	    vueloNuevo[0] = comboBoxOrigen.getSelectedItem().toString();
+	    vueloNuevo[1] = textFieldHoraSalida.getText() + ":" + textFieldMinutosSalida.getText();
+	    vueloNuevo[2] = textFieldHoraLlegada.getText() + ":" + textFieldMinutosLlegada.getText();
+	    vueloNuevo[3] = comboBoxClase.getSelectedItem().toString();
+	    vueloNuevo[4] = textFieldPrecio.getText();
 
-		listaVuelos.add(vueloNuevo);
+	    listaVuelos.add(vueloNuevo);
 
-		String rutaArchivo = "src/listaVuelos.txt";
+	    String rutaArchivo = "src/listaVuelos.txt";
 
-		try (BufferedWriter bw = new BufferedWriter(new FileWriter(rutaArchivo))) {
-			String linea = "";
-			for (String[] strings : listaVuelos) {
-				linea = strings[0] + "," + strings[1] + "," + strings[2] + "," + strings[3] + "," + strings[4];
-				bw.write(linea);
-				bw.newLine();
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	    // Cargar vuelos existentes desde el archivo
+	    try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))) {
+	        String linea;
+	        while ((linea = br.readLine()) != null) {
+	            String[] vueloExistente = linea.split(",");
+	            listaVuelos.add(vueloExistente);
+	        }
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
+
+	    // Escribir todos los vuelos (incluyendo el nuevo) al archivo
+	    try (BufferedWriter bw = new BufferedWriter(new FileWriter(rutaArchivo))) {
+	        for (String[] strings : listaVuelos) {
+	            String linea = strings[0] + "," + strings[1] + "," + strings[2] + "," + strings[3] + "," + strings[4];
+	            bw.write(linea);
+	            bw.newLine();
+	        }
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
 	}
+
 
 	public static ArrayList<String[]> leerArchivoTexto(String rutaArchivo) {
 		ArrayList<String[]> listaDatos = new ArrayList<>();

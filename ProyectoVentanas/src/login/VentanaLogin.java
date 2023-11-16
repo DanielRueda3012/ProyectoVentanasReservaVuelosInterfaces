@@ -31,7 +31,7 @@ public class VentanaLogin extends JFrame {
         // Configuración de la máscara para el campo de usuario (DNI)
         MaskFormatter formatter;
         try {
-            formatter = new MaskFormatter("#########A");
+            formatter = new MaskFormatter("##.###.###-A");
             usuarioTextField = new JFormattedTextField(formatter);
         } catch (java.text.ParseException e) {
             e.printStackTrace();
@@ -90,10 +90,10 @@ public class VentanaLogin extends JFrame {
     }
 
     private boolean validarUsuario(String usuario, String contraseña) {
-        boolean esUsuarioValido = (usuario.equals("111111111H") && contraseña.equals("111111111H")) ||
-                (usuario.equals("222222222J") && contraseña.equals("222222222J"));
+        boolean esUsuarioValido = (usuario.equals("11.111.111.-H") && contraseña.equals("11.111.111.-H")) ||
+                (usuario.equals("22.222.222-J") && contraseña.equals("22.222.222-J"));
 
-        if (esUsuarioValido && usuario.equals("222222222J")) {
+        if (esUsuarioValido && usuario.equals("22.222.222-J")) {
             VentanaOperaciones ventanaOperaciones = VentanaOperaciones.getInstance();
             ventanaOperaciones.habilitarBotonAnadirVuelo();
         }

@@ -1,3 +1,11 @@
+Bilbao,56,58,T,898
+Bilbao,15:00,16:05,Business,800
+Valencia,12:00,13:05,Tourist,545454
+Valencia,23:30,00:35,Tourist,98764
+Bilbao,56,58,T,898
+Bilbao,15:00,16:05,Business,800
+Valencia,12:00,13:05,Tourist,545454
+Bilbao,22:30,23:35,Business,5454
 Barcelona,06:45,08:10,Business,350
 Barcelona,06:55,08:20,Business,350
 Barcelona,07:05,08:30,Turista,250
