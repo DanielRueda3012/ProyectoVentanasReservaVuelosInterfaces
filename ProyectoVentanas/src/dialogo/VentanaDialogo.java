@@ -55,7 +55,7 @@ public class VentanaDialogo extends JDialog {
 		contentPanel.add(textField);
 
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(57, 78, 341, 133);
+		scrollPane.setBounds(36, 67, 373, 144);
 		contentPanel.add(scrollPane);
 
 		table = new JTable();

@@ -98,6 +98,9 @@ public class VentanaOperaciones extends JFrame implements ActionListener, Window
 
     private void inicializarControles() {
         btnAnadirVuelo = new JButton("Añadir Vuelo");
+        btnAnadirVuelo.setForeground(Color.BLACK);
+        btnAnadirVuelo.setBackground(Color.PINK);
+        btnAnadirVuelo.setFont(new Font("Kristen ITC", Font.PLAIN, 16));
         btnAnadirVuelo.setEnabled(false);
         btnAnadirVuelo.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -105,10 +108,11 @@ public class VentanaOperaciones extends JFrame implements ActionListener, Window
             }
         });
 
-        btnAnadirVuelo.setBounds(400, 207, 120, 21);
+        btnAnadirVuelo.setBounds(400, 207, 152, 21);
         contentPaneVentanaPrincipal.add(btnAnadirVuelo);
 
         ButtonAceptar = new JButton("Aceptar");
+        ButtonAceptar.setFont(new Font("DejaVu Sans", Font.BOLD | Font.ITALIC, 11));
         ButtonAceptar.setEnabled(false);
         ButtonAceptar.setBackground(new Color(159, 255, 207));
         ButtonAceptar.setBounds(193, 207, 85, 21);
@@ -116,22 +120,26 @@ public class VentanaOperaciones extends JFrame implements ActionListener, Window
         contentPaneVentanaPrincipal.add(ButtonAceptar);
 
         ButtonCancelar = new JButton("Cancelar");
+        ButtonCancelar.setFont(new Font("DejaVu Sans Mono", Font.BOLD | Font.ITALIC, 11));
         ButtonCancelar.setBackground(new Color(255, 168, 168));
-        ButtonCancelar.setBounds(294, 207, 85, 21);
+        ButtonCancelar.setBounds(294, 207, 96, 21);
         ventanaMensajeFinal(ButtonCancelar);
         contentPaneVentanaPrincipal.add(ButtonCancelar);
 
         CheckBoxReservarVuelo = new JCheckBox("Reservar Vuelo");
+        CheckBoxReservarVuelo.setFont(new Font("Lucida Sans Typewriter", Font.BOLD | Font.ITALIC, 11));
         CheckBoxReservarVuelo.setBounds(53, 22, 134, 43);
         CheckBoxReservarVuelo.addActionListener(this);
         contentPaneVentanaPrincipal.add(CheckBoxReservarVuelo);
 
         CheckBoxHabitacion = new JCheckBox("Reservar Habitación");
+        CheckBoxHabitacion.setFont(new Font("Lucida Sans Typewriter", Font.BOLD | Font.ITALIC, 11));
         CheckBoxHabitacion.setBounds(242, 22, 165, 43);
         CheckBoxHabitacion.addActionListener(this);
         contentPaneVentanaPrincipal.add(CheckBoxHabitacion);
 
         RadioButtonIndividual = new JRadioButton("Individual");
+        RadioButtonIndividual.setFont(new Font("Gadugi", Font.BOLD | Font.ITALIC, 11));
         RadioButtonIndividual.setEnabled(false);
         buttonGroup.add(RadioButtonIndividual);
         desactivarCampoTexto(RadioButtonIndividual);
@@ -139,6 +147,7 @@ public class VentanaOperaciones extends JFrame implements ActionListener, Window
         contentPaneVentanaPrincipal.add(RadioButtonIndividual);
 
         RadioButtonDoble = new JRadioButton("Doble");
+        RadioButtonDoble.setFont(new Font("Gadugi", Font.BOLD | Font.ITALIC, 11));
         RadioButtonDoble.setEnabled(false);
         RadioButtonDoble.setSelected(true);
         desactivarCampoTexto(RadioButtonDoble);
@@ -147,6 +156,7 @@ public class VentanaOperaciones extends JFrame implements ActionListener, Window
         contentPaneVentanaPrincipal.add(RadioButtonDoble);
 
         RadioButtonMultiple = new JRadioButton("Multiple");
+        RadioButtonMultiple.setFont(new Font("Gadugi", Font.BOLD | Font.ITALIC, 11));
         RadioButtonMultiple.setEnabled(false);
         activarCampoTexto(RadioButtonMultiple);
         buttonGroup.add(RadioButtonMultiple);
@@ -187,6 +197,7 @@ public class VentanaOperaciones extends JFrame implements ActionListener, Window
         });
 
         btnSeleccionar = new JButton("Seleccionar");
+        btnSeleccionar.setFont(new Font("DejaVu Sans", Font.BOLD | Font.ITALIC, 11));
         btnSeleccionar.setBounds(54, 206, 112, 23);
         contentPaneVentanaPrincipal.add(btnSeleccionar);
         ventanaMensajeFinal(btnSeleccionar);
@@ -204,10 +215,12 @@ public class VentanaOperaciones extends JFrame implements ActionListener, Window
         contentPaneVentanaPrincipal.add(textField_1);
 
         lblHoraSalida = new JLabel("Hora salida");
+        lblHoraSalida.setFont(new Font("Gadugi", Font.BOLD | Font.ITALIC, 11));
         lblHoraSalida.setBounds(10, 116, 119, 14);
         contentPaneVentanaPrincipal.add(lblHoraSalida);
 
         lblHoraLlegada = new JLabel("Hora llegada");
+        lblHoraLlegada.setFont(new Font("Gadugi", Font.BOLD | Font.ITALIC, 11));
         lblHoraLlegada.setBounds(10, 154, 114, 14);
         contentPaneVentanaPrincipal.add(lblHoraLlegada);
 

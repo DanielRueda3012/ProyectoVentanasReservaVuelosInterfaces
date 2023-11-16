@@ -18,6 +18,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 public class VentanaAnyadirVuelo extends JFrame {
 
@@ -82,22 +83,27 @@ public class VentanaAnyadirVuelo extends JFrame {
 		frame.getContentPane().setLayout(null);
 
 		labelOrigen = new JLabel("Origin");
+		labelOrigen.setFont(new Font("Gadugi", Font.BOLD | Font.ITALIC, 13));
 		labelOrigen.setBounds(36, 24, 71, 34);
 		frame.getContentPane().add(labelOrigen);
 
 		labelSalida = new JLabel("Departure");
+		labelSalida.setFont(new Font("Gadugi", Font.BOLD | Font.ITALIC, 13));
 		labelSalida.setBounds(36, 67, 71, 34);
 		frame.getContentPane().add(labelSalida);
 
 		labelLlegada = new JLabel("Arrival");
+		labelLlegada.setFont(new Font("Gadugi", Font.BOLD | Font.ITALIC, 13));
 		labelLlegada.setBounds(36, 112, 71, 34);
 		frame.getContentPane().add(labelLlegada);
 
 		labelClase = new JLabel("Class");
+		labelClase.setFont(new Font("Gadugi", Font.BOLD | Font.ITALIC, 13));
 		labelClase.setBounds(36, 157, 71, 34);
 		frame.getContentPane().add(labelClase);
 
 		labelPrecio = new JLabel("Price");
+		labelPrecio.setFont(new Font("Gadugi", Font.BOLD | Font.ITALIC, 13));
 		labelPrecio.setBounds(36, 202, 71, 34);
 		frame.getContentPane().add(labelPrecio);
 

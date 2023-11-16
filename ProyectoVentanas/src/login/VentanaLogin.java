@@ -39,7 +39,9 @@ public class VentanaLogin extends JFrame {
 
         contraseñaPasswordField = new JPasswordField();
         aceptarButton = new JButton("Aceptar");
+        aceptarButton.setFont(new Font("DejaVu Sans Mono", Font.BOLD, 11));
         salirButton = new JButton("Salir");
+        salirButton.setFont(new Font("Source Serif Pro", Font.ITALIC, 15));
 
         configurarLogica();
 
@@ -51,9 +53,13 @@ public class VentanaLogin extends JFrame {
         salirButton.setBackground(new Color(255, 0, 51)); 
         salirButton.setForeground(new Color(0, 0, 0));
 
-        contentPane.add(new JLabel("Usuario (DNI):"));
+        JLabel label = new JLabel("Usuario (DNI):");
+        label.setFont(new Font("Arial Black", Font.BOLD, 11));
+        contentPane.add(label);
         contentPane.add(usuarioTextField);
-        contentPane.add(new JLabel("Contraseña:"));
+        JLabel label_1 = new JLabel("Contraseña:");
+        label_1.setFont(new Font("Arial Black", Font.BOLD, 11));
+        contentPane.add(label_1);
         contentPane.add(contraseñaPasswordField);
         contentPane.add(aceptarButton);
         contentPane.add(salirButton);
